@@ -1,0 +1,64 @@
+# Dependencies
+node_modules/
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# TypeScript compiled output (source lives in .ts files)
+typescript/**/*.js
+typescript/**/*.js.map
+typescript/**/*.d.ts
+typescript/**/*.d.ts.map
+
+# Archives & backups
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor / IDE
+.idea/
+*.swp
+*.swo
+*~
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Runtime / cache
+.cache/
+.temp/
+tmp/
+*.pid
+*.seed
