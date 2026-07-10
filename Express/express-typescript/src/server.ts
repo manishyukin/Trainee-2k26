@@ -3,12 +3,13 @@ import { authRouter } from "./routes/auth.route.js";
 import { profileRouter } from "./routes/profile.route.js";
 
 const app = express();
-const port = 8000;
+const port = 8008;
 
 // Parse incoming JSON request bodies
 app.use(express.json());
 
 // Mount route groups
+console.log("Auth Router ", );
 app.use("/auth", authRouter);
 app.use("/profile", profileRouter);
 
