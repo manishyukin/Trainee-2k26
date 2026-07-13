@@ -8,8 +8,6 @@ const readData = readFile();
 // Handle user registration
 export const signup = async (req: Request, res: Response): Promise<Response> => {
   const { name, email, password } = req.body;
-  const tok  = req.headers.authorization?.split(" ")[1];
-  console.log("Token** ", tok);
   const data = readFile();
   console.log("Data ", data);
   const user = readData.find((user) => user.email === email);
@@ -30,17 +28,18 @@ export const signup = async (req: Request, res: Response): Promise<Response> => 
 //Sign-in route 
 export const signin = async (req: Request, res: Response): Promise<Response> => {
   const { email,password } = req.body;
-  console.log("email ", email);
+
   const user = readData.find((user) => user.email === email);
 
   if (!user) {
     return res.status(404).send({ message: "User not found" });
   }
   const isPasswordValid = await bcrypt.compare(password, user.password);
+  const token = await generateToken(email);
   console.log("isPasswordValid ", isPasswordValid);
   if (!isPasswordValid) {
     return res.status(400).send({ message: "Invalid password" });
   }
-  return res.status(200).send({ status : 200, message: "User signed in successfully" });
+  return res.status(200).send({ status : 200, message: "User signed in successfully", token : token });
 
 }
