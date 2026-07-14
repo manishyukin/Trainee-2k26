@@ -7,5 +7,6 @@ export const tasksRouter = express.Router();
 // Auth endpoints
 
 tasksRouter.post("/create-task", verifyRequest, tasksService);
+tasksRouter.delete("/delete-task", verifyRequest, tasksService);
 
 // http://localhost:8008/task/create-task

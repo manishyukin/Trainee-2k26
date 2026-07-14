@@ -13,3 +13,4 @@ export const verifyToken = async (req: Request, res: Response, next: NextFunctio
 export const generateToken =  (email: string) => {
    return jwt.sign({ email }, "dsfkhsdhfsdkhjfasdf" as string, { expiresIn: "1h" });
 };
+

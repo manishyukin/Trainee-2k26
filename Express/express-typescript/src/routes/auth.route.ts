@@ -6,3 +6,6 @@ export const authRouter = express.Router();
 // Auth endpoints
 authRouter.post("/signup", signup);
 authRouter.post('/signin', signin);
+
+
+// mail + password  + mailverification 
