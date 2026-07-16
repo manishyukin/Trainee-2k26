@@ -1,8 +1,8 @@
+import "dotenv/config";
 import express from "express";
 import { authRouter } from "./routes/auth.route.js";
 import { profileRouter } from "./routes/profile.route.js";
 import { tasksRouter } from "./routes/tasks.route.js";
-
 const app = express();
 const port = 8008;
 
